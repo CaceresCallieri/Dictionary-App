@@ -1,0 +1,60 @@
+:root {
+  --light-gray: #757575;
+  --violet: #a445ed;
+}
+
+.theme-switch {
+  display: flex;
+  gap: 1rem;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  /* font-size: 17px; */
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: var(--light-gray);
+  inset: 0;
+  border-radius: 40px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 10%;
+  bottom: 13%;
+  background-color: white;
+  border-radius: inherit;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.switch input:checked + .slider {
+  background-color: var(--violet);
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(110%);
+}
+
+/* ICON MOON */
+svg.dark-mode path  {
+  stroke: var(--violet);
+}
