@@ -19,7 +19,7 @@ function App() {
 	return (
 		<FontContext.Provider value={{ selectedFont, setSelectedFont }}>
 			<main>
-				<Header />
+				<Header setIsLoading={setIsLoading} setWordDataResponse={setWordDataResponse as React.Dispatch<React.SetStateAction<object | undefined>>} />
 				<SearchBar isLoading={isLoading} setIsLoading={setIsLoading} setWordDataResponse={setWordDataResponse as React.Dispatch<React.SetStateAction<object | undefined>>} />
 				{!wordNotFound ?
 					(
